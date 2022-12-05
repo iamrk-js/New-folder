@@ -1,0 +1,23 @@
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let user of users$ | async">
+        {{user.id}} {{user.name}}
+    </li>
+</ul>
+<hr>
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let username of usernames$ | async">
+        {{username}}
+    </li>
+</ul>
+<hr>
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let username of activeUser$ | async">
+        {{username.name}}
+    </li>
+</ul>
+
+<p *ngIf="data$ | async as data ">
+    <span *ngFor="let user of data.users ">
+        {{user.name}}
+    </span>
+</p>
